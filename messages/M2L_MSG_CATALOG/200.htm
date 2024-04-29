@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/opac_canterbury/images/favicons.png" type="image/x-icon">
+	
+
+		
+	<title>K&#257; Kohika o Macmillan Brown</title>
+	<!-- <link rel="stylesheet" href="/opac_canterbury/css/global.css" media="all">
+	<link rel="stylesheet" href="/opac_canterbury/css/jquery-ui.css" media="all">
+    <link rel="stylesheet" href="/opac_canterbury/css/colorbox/colorbox.css">
+	<!--link rel="stylesheet" href="../css/jquery.treeview.css" /-->
+	<!-- <link rel="stylesheet" href="/opac_canterbury/css/library.css"media="all">
+	<link rel="stylesheet" href="/opac_canterbury/css/lightbox.css"media="all">
+    <link rel="stylesheet" href="/opac_canterbury/css/bootstrap.css"media="all"> -->
+	<link rel="stylesheet" href="/opac_canterbury/css/stylecompound.css"media="all">
+	
+	
+	
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+   
+	
+	
+
+
+    <!--[if IE 9]><link rel="stylesheet" href="/opac_canterbury/css/ie-9.css" /><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" href="/opac_canterbury/css/ie-8.CSS"/><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="/opac_canterbury//css/ie-7.css" /><![endif]-->
+    
+
+   	<!--[if lt IE 9]>
+		<script type="text/javascript" src="http://kohika.canterbury.ac.nz/opac_canterbury/js/respond.min.js"></script>
+		<script type="text/javascript" src="http://kohika.canterbury.ac.nz/opac_canterbury/js/html5shiv.js"></script>
+		<script type="text/javascript" src="/opac_canterbury/js/selectivizr-min.js"></script>
+    <![endif]-->
+
+	
+
+
+<script>
+
+var sessid = "^HOME_SESSID^"; 
+</script>
+
+
+
+</head>
+
+
+<body>
+
+
+
+
+ <!-- resetting dDocName to current content item-->
+
+
+
+<div id="wrapper">
+<!-- Panel -->
+
+
+
+<div class="clearFix ieClearFix"></div>
+<!--googleon: all-->
+<!--div id="title">
+	<div class="titleinner">
+	 <div id="sitetitle"><div id="top"><h2>K&#257; Kohika o Macmillan Brown o Macmillan</h2></div></div>
+
+
+	<!--img src="/opac_canterbury/images/kohika.jpg"-->
+	
+	
+	<!--/div> <!-- ends titleinner -->
+	
+	
+	
+	
+<!--/div> <!-- ends title -->
+<!--navigation-->
+<div id="bannersection">
+<img src="http://www.canterbury.ac.nz/brand/red/graphics/blank.png" id="printlogo" alt="logo"/>
+  <div id="banner">
+    
+    <div id="sitetitle"><div id="top"><h2><a href="/opac_canterbury/index.html">K&#257; Kohika o Macmillan Brown</a></h2></div></div>
+</div>
+</div>
+
+<!--end navigation-->
+<div class="clearFix"></div>
+
+<div id="contentwrapper">
+<div class="btn-toolbar">
+<div id="toppanel">
+
+<script>
+                $(document).ready(function() {
+                    var patron_id = ReadCookie('M2L_PATRON_ID');
+                    var patron_name = ReadCookie('M2L_PATRON_NAME');
+                    var loginHTML = null;
+                   
+
+                         // If the user is a guest:
+                    if (patron_id == "Guest" || patron_id == "" || patron_id == null || patron_id == "null") {
+                       
+					
+						loginHTML += '<a class="btn btn-primary" id="open" class="open" href="^home_sessid^?get&file=[opac_canterbury]login.html">Log In | Register</a>'
+						
+                    }
+					
+					
+					// If the user is a registered :
+					
+					  if (patron_id != null && patron_id != "null" && patron_id != "Guest" && patron_id != " ") {
+					    loginHTML  = '<div class="account">';
+						loginHTML += '<div class="btn-group">';
+                        loginHTML += ' <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">';
+                        loginHTML += '&nbsp;';
+						loginHTML += patron_name;
+						loginHTML += '&nbsp;';
+						loginHTML += '<span class="caret"></span>'
+                        loginHTML += '</button>';
+						loginHTML += '<ul class="dropdown-menu">';
+                        loginHTML += '<li><a class="link-button" href="^HOME_SESSID^?SHOWORDERLIST&NEW=Y&NOMSG=[mint_canterbury]MESSAGES~5Ccartempty.htm&COOKIE=BOOKMARK">My Bookmarks</a></li>';
+                        loginHTML += '<li><a class="link-button" href="/opac_canterbury/scripts/mwimain.dll/144/DOC_REQUEST/REQUEST_SUMMARY?SESSIONSEARCH&EXP=USE(MY_REQUESTS)&NOMSG=[MINT_CANTERBURY]MESSAGES\\NO_ORDER.HTM">My Requests</a></li>';
+                        loginHTML += '<li><form method="post" action="^HOME_SESSID^?patronlogoff&file=[opac_canterbury]search.html" id="logout-form">';
+                        loginHTML += '<input type="hidden" name="C_CLIENT_NUMBER" value="">';
+                        loginHTML += '<input type="submit" class="link-button1" value="Log Out" id="logout">';
+                        loginHTML += '</form></li>';
+						loginHTML += '</ul>';
+						loginHTML +=  '</div>';
+						loginHTML +=  '</div>';
+                        
+                        // Display Order Information As Well:
+                        $('#order-information').css('display','block');
+                    }
+					
+					
+
+              
+
+                    $('div#toppanel').html(loginHTML);
+					
+                });
+            </script>
+
+
+'
+
+	<!-- The tab on top -->	
+	
+	
+</div> <!--panel -->
+
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+   About Us <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="http://library.canterbury.ac.nz/mb/mbabout.shtml"target="_blank">Campus page for Macmillan Brown Library   </a></li>
+    <li><a href="http://library.canterbury.ac.nz/contacts/"target="_blank">Contact Us</a></li>
+  </ul>
+</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Collections and Research <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="http://library.canterbury.ac.nz/mb/mbabout.shtmlarchives/index.shtml"target="_blank">Archives</a></li>
+	<li><a href="http://library.canterbury.ac.nz/mb/mbabout.shtmlarchdraw.shtml"target="_blank">Architectural Drawings</a></li>
+	<li><a href="http://library.canterbury.ac.nz/mb/mbabout.shtmlart/index.shtml"target="_blank">Art</a></li>
+	<li><a href="http://library.canterbury.ac.nz/mb/mbabout.shtmlmbphoto.shtml"target="_blank">Photographs</a></li>
+</ul>
+</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Exhibitions <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+   <li><a href="http://library.canterbury.ac.nz/mb/mbabout.shtmlfeaturedcollns.shtml" target="_blank">Online Exhibitions</a></li>
+    
+  </ul>
+</div>
+
+</div>
+
+	  
+	
+	   
+
+ 
+<div id="content">
+
+
+<div class="content-container">
+
+<p> Unknown User Name, check your username and try again </p>
+    
+</div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+  </div>
+  
+</div>
+</div>
+</div>
+
+
+
+	
+  
+
+	
+  
+
+</div>
+</div>
+</div>
+
+</div>
+
+ <!-- ends content -->
+
+
+
+
+<!-- ends contentwrapper -->
+
+
+
+
+
+
+
+
+<!--googleoff: all-->
+
+<div class="clearFix"></div>
+<div id="allfooter">
+<div id="footersection">
+<div class="container_16">
+<div id="footer" class="grid_15 prefix_1">
+<span id="copyright">&#169;&#160;University of Canterbury</span><ul><li><a href="http://www.canterbury.ac.nz/help/legal.shtml">Copyright and Disclaimer</a></li><li><a href="http://www.canterbury.ac.nz/privacy">Privacy</a></li><li><a href="http://www.canterbury.ac.nz/help/contact/">Feedback</a></li><li><a href="http://www.canterbury.ac.nz/help/">Help and Accessibility</a></li><li><a href="http://www.canterbury.ac.nz/help/a-z.shtml">A-Z of University Websites</a></li></ul>
+
+
+</div>
+</div>
+</div>
+</div>
+<!-- /footer_bg -->
+
+
+
+
+<div style="display: none;">
+            <div id="simple-search-help" class="help-page">
+<p>Quick Search provides a fast and easy  way to search The University of Canterbury  Online Collections and online Catalog.</p>  
+
+<p>Enter a term to search through the following fields:
+<ul>
+<li>- Titles</li>
+<li>- Descriptions and scope notes</li>
+<li>- Subjects</li>
+<li>- Creators</li>
+<li>- Associated people, organizations, places, and events</li>
+<li>- Oral history descriptions, speakers, and interviewers</li>
+<li>- Dates</li>
+<li>- Material types</li>
+<li>- Collection types</li>
+</ul>
+</p>
+<p>The "@" or "*" symbol may be used as a wildcard.  For example, the search term "galve@" will return results for both "Galvez" and "Galveston."</p>
+
+<p>Names are listed in last name, first name order.  For example, the search term "Woodword*" will return results for both Ellsworth and William Woodward.</p>
+
+<p>Use the Advanced Search for targeted queries of specific fields, and Boolean searches.</p>
+
+<p>Alternately, browse items through pre-defined subject areas by using the Collection Themes.</p>
+<p></p>
+<p>Click the "+" sign to move images into the image gallery.</p>
+<p>Bookmark items to create a temporary group of results across multiple searches. Currently, bookmarks are not saved after the catalog is closed in your browser.</p>
+</div>
+
+</div>
+
+    <!-- SCRIPTS -->
+	
+	<script type="text/javascript" src="/opac_canterbury/js/jscompound.js"></script>
+	
+	
+ 
+	
+<script type="text/javascript">
+$(document).ready(function () {	
+	$('#drop-nav li').hover(
+		function () {
+			//show its submenu
+			$('ul', this).stop().slideDown(100);
+
+		}, 
+		function () {
+			//hide its submenu
+			$('ul', this).stop().slideUp(100);			
+		}
+	);
+	
+});
+</script>
+	
+<script type="text/javascript" >
+$(document).ready(function(){
+    $(".inline").colorbox({inline:true, scroll:false,  maxWidth:"1000px",maxHeight:"600px"});
+	
+});
+</script>
+		
+
+
+<!--script>
+  $(document).ready(function(){
+
+    $("#top").treeview({
+      collapsed: true
+    });
+    $("#top").css("display","block");
+
+   $("#browse_body *").bind("click",function(){
+    //alert('hover');
+    getHeight();
+  });
+
+
+  });
+
+
+
+
+  function getHeight(){
+    var ulHeight = $("#top").height();
+    //alert(ulHeight);
+    var startHeight = $("#browse_body").height();
+
+    if(ulHeight >= startHeight)
+    {
+    //$("#news_body").height(ulHeight-232);
+    $("#browse_body").height(ulHeight);
+     //compareHeights();
+    }
+
+    if(ulHeight < startHeight)
+    {
+      if(startHeight > 789)
+      {
+      if(ulHeight < 789)
+      {
+        $("#browse_body").height(788);
+      }
+      else{
+      $("#browse_body").height(ulHeight);
+      }
+      // var col1 = $("#colOne").height();
+       //$("#news_body").height(ulHeight-232);
+       //$("#colOne").height(startHeight + 66);
+       //compareHeights();
+      }
+    }
+
+
+
+
+
+  }
+
+  </script-->
+<script>
+
+$(document).ready(function(){
+$('.carousel').carousel({
+  interval: 5000
+})
+
+$('.carousel-control').mouseenter(function() {
+  $(".glyphicon").css("display","inline-block");
+  
+});
+$('.carousel-control').mouseleave(function() {
+  $(".glyphicon").css("display","none");
+  
+})
+});
+</script>
+
+	
+</body>
+</html>

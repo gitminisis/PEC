@@ -1,0 +1,47 @@
+/**
+ * The PEC specific MINISIS Styling elements 
+ */ 
+.odd{
+background-color: #cdd5bd; 
+}
+
+h1.title {
+	display:block;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:20px;
+	color: #7a5839;
+	line-height:22px;
+	font-weight:bold;
+	padding-bottom:0px;
+
+}
+
+h2 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color: #000000;
+	line-height:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	
+}
+
+h3 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color: #000000;
+	line-height:30px;
+	text-transform:uppercase;
+	
+}
+h4 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color:#fa2600;
+	font-weight:bold;
+	line-height:25px;
+}
+
+.simple_search_body_pec{
+    margin-top:20px;
+}

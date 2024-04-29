@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<script>
+function EchoValues(selObj)
+{
+  var num_selected=0;
+  var query = "";
+
+  for (i=0; i< selObj.options.length; i++)
+  {
+    if (selObj.options[i].selected)
+    {
+      num_selected++;
+	  
+      if (num_selected > 1)
+      {
+        // add space between valuesz
+        self.opener.document.getElementById('advForm').^KEYNAME^.value += " ";
+		query += " ";
+      }
+      // echo value on calling screen
+	  
+	  query += selObj.options[i].text;
+	  query = query.replace(/["']{1}/gi,"");
+      
+	  // self.opener.document.getElementById('advForm').^KEYNAME^.value += selObj.options[i].text;
+	  self.opener.document.getElementById('advForm').^KEYNAME^.value += query;
+    }
+  }
+  self.close();
+}
+</script>
+<title>LMA OPAC</title>
+<link href="https://pec.minisisinc.com/ncrr/LMA_pages.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head>
+<body class="oneColElsCtrHdr">
+<div id="container">
+<div class="oneColElsCtrHdr" id="header">
+<!-- end #header --></div><center>
+
+  Fast access list of ^TITLE^</strong><br>
+
+
+<FORM  name="keys">
+<A HREF="^FIRST^">[First]</A>&nbsp;&nbsp;<A HREF="^PREV^">[Previous]</A>&nbsp;&nbsp;<A HREF="^NEXT^">[Next]</A>&nbsp;&nbsp;<A HREF="^LAST^">[Last]</A>
+
+<table border=0>
+<tr>
+<td colspan=3>
+<select name="keyvalue" size=20>
+^INDEX_LIST^
+</select>
+</td>
+</tr>
+</table>
+<p>
+<INPUT TYPE="BUTTON" ONCLICK="EchoValues(document.forms[0].keyvalue)" VALUE="Select">
+</CENTER>
+</FORM>
+
+<CENTER>
+<FORM METHOD="POST" ACTION="^FIND^">
+<INPUT TYPE="HIDDEN" NAME="KEYNAME" VALUE="^KEYNAME^">
+<INPUT TYPE="TEXT" SIZE=50 NAME="KEYVALUE">&nbsp;<INPUT TYPE="submit" VALUE="Search">
+</FORM>
+</CENTER>
+
+<div class="oneColElsCtrHdr" id="footer">
+<div class="oneColElsCtrHdr" id="footerl">
+<span class="footer">
+</span>  </div>
+<!-- end #container --></div>
+</center>
+
+</body>
+</html>

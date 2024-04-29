@@ -1,0 +1,78 @@
+/******************************************************** 
+ * Editor Styles for Content                            * 
+ ********************************************************/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+}
+td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+}
+
+.default {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+}
+.heading {
+	display:block;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:20px;
+	color: #7a5839;
+	line-height:22px;
+	font-weight:bold;
+	padding-bottom:0px;
+	margin-bottom:-10px;
+}
+.heading2 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color: #000000;
+	line-height:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	
+}
+.heading3 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color: #000000;
+	line-height:20px;
+	text-transform:uppercase;
+	
+}
+.heading4 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color:#fa2600;
+	font-weight:bold;
+	line-height:25px;
+}
+
+.img_right {
+	float:right;
+	margin-left:12px;
+	margin-bottom:10px;
+	padding:7px;
+	border:solid 1px #7a5839;
+}
+.img_left {
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+	padding:7px;
+	border:solid 1px #7a5839;
+}
+.border {
+	padding:7px;
+	border:solid 1px #7a5839;
+}
+
+.small {
+	color: #000000;
+	font-size: 9px;
+	font-weight:normal;
+}

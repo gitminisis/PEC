@@ -1,0 +1,348 @@
+
+
+
+     
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>PEC Archives
+    </title>
+    <meta name="description" http-equiv="description" content="" />
+    <meta name="keywords" http-equiv="keywords" content="" />            
+<link href="/pec/css/minisis.css" media="all" rel="stylesheet" type="text/css" />
+<link href="/pec/css/facebox.css" media="all" rel="stylesheet" type="text/css" />
+<link href="/pec/css/jquery.lightbox-0.5.css" media="all" rel="stylesheet" type="text/css" />
+<link href="/pec/css/jquery-ui-1.8.1.custom.css" media="all" rel="stylesheet" type="text/css" />
+
+<link href="/pec/css/pepl_layout.css" media="all" rel="stylesheet" type="text/css" />
+<link href="/pec/css/editor.css" media="all" rel="stylesheet" type="text/css" />
+<link href="/pec/css/xcss_menu.css" media="all" rel="stylesheet" type="text/css" />
+<link href="/pec/css/print.css" media="print" rel="stylesheet" type="text/css" />
+<link href="/pec/css/pec_minisis.css" media="all" rel="stylesheet" type="text/css" />
+
+
+                    
+
+<script src="/pec/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="/pec/js/minisis.js" type="text/javascript"></script>
+<script src="/pec/js/jquery.lightbox-0.5.min.js" type="text/javascript"></script>
+<script src="/pec/js/jquery-ui-1.8.1.custom.min.js" type="text/javascript"></script>
+<script src="/pec/js/facebox.js" type="text/javascript"></script>
+<script src="/pec/js/custom.js" type="text/javascript"></script>
+<script src="/pec/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/pec/js/form_handler.js" type="text/javascript"></script>
+    <script>
+function get_cookies_array() {
+
+    var cookies = { };
+	
+
+    if (document.cookie && document.cookie != '') {
+        var split = document.cookie.split(';');
+        for (var i = 0; i < split.length; i++) {
+            var name_value = split[i].split("=");
+            name_value[0] = name_value[0].replace(/^ /, '');
+            cookies[decodeURIComponent(name_value[0])] = decodeURIComponent(name_value[1]);
+        }
+    }
+
+    return cookies;
+	
+   
+}
+
+window.onload = function()
+{
+var cookies = get_cookies_array();
+var ximages= 0;
+for(var name in cookies) {
+   var slicedcookie = name.substring(0, 5);
+   if (slicedcookie == "image"){
+   ximages ++;
+   }
+}
+
+document.getElementById('gallery_count').innerHTML = ximages;
+}
+
+</script>        
+   <script>
+  
+  
+  $(document).ready(function(){
+          
+		  	  
+		  $('.mnemonic').change(function() {
+		   var selectedoption =($(this).val().toUpperCase());
+		   console.log(selectedoption);
+		   //var optionvalue = $( ".mnemonic option:selected" ).text().toUpperCase();
+		   //console.log(optionvalue);
+		   var url = '^HOME_SESSID^/FIRST?INDEXLIST&FORM=[PEC]indexlist.html&KEYNAME=' + selectedoption + '&WINDOW=' + selectedoption +  '&database=PUB_DESCRIPTION';
+           $('.browselink').attr("href",url);
+
+		  
+		   
+		  
+  });
+  
+ });
+ 
+ </script>                                          
+  </head>
+  <body>
+    <div id="container">  
+      <div id="header" class="noprint">
+        <div id="logo">
+           <a href="/pec/index.html">
+            <img src="/pec/images/pecla_logo.jpg" alt="The County of Prince Edward Public Library" border="0" /> 
+            </a>
+        </div>  
+         
+        <!--<div id="search">
+          <form name="searchForm" method="post" action="/sitesearchs11.php">  
+            <table width="278" border="0" cellspacing="0" cellpadding="0">  
+              <tr>    <td>ZSEARCH THIS SITE</td>    
+                <td align="right">
+                  <input name="searchText" type="text" class="search_bar_field" id="searchText" onkeydown="javascript:if(event.keyCode == 13){ document.searchForm.submit(); }" value="" onclick="value=''" size="20" /></td>    
+                <td width="25" align="right">
+                  <input type="hidden" name="command" value="doSearch" />            
+                  <input type="image" onclick="javascipt:document.searchForm.submit();" value="search" src="/pec/images/pepl_go_btn.gif" alt="Submit button" align="right" /></td>  
+              </tr>
+            </table>      
+          </form>     
+        </div>    
+        <div id="printicon">  
+        </div>    
+        <div id="printer_icon" class="noprint">
+          <a href="javascript:printPage();">
+            <img src="/pec/images/printer.png" alt="print this page" width="28" height="23" border="0" /></a>
+        </div>-->  
+      </div>  
+      <div class=printonly>
+        <img src="/pec/images/bw_logo.jpg" />
+      </div>  
+      <div id="contentareabottom">  
+        <div id="contentarea">      
+          <div class="content-wrap">                 
+          <h1 class="title">County of Prince Edward Public Library and Archives   
+          </h1>     
+                  
+         <div class="header_links">               
+            <a href="/pec/index.html">Home</a> |                 
+            <a href="^home_sessid^?get&file=[pec]advsearch.html">Advanced Search</a> |                 
+            <a class="clipboard_link" href="^HOME_SESSID^?SHOWORDERLIST&NEW=N&NOMSG=[PEC]MESSAGES~5Ccartempty.htm&COOKIE=BOOKMARK">  View Clipboard                     
+              <span class="clipboard_count">(^ITEMCOUNT=BOOKMARK^)</span></a> |                      
+            <a href="/PEC/gallery.html" class="gallery_link"> Image Gallery (<span class="gallery_count" id="gallery_count"></span>)</a>                 
+          </div>                    
+          
+               
+  
+  
+  
+
+  
+  
+   
+   
+<h3>Advanced Description Search Form</h3>
+<div class="adv_search_body">
+  <form action="^search^" method="post">
+  
+<div class="adv_search_row first_True">
+
+
+
+
+<select name="field_1" id='field_1' class="mnemonic">
+<option value="title_cl">Title</option>
+<option value="scope_cl">Scope</option>
+<option value="names_cl">Names</option>
+<option value="formats_cl">Formats</option>
+<option value="places_cl">Places</option>
+<option value="refno_cl">Reference Number</option>
+<option value="boxno_cl">Box Number</option>
+</select>
+
+ <input class="adv_textinput" id="text_1" name="text_1" type="text" />
+<a class="facebox browse browselink" href="^HOME_SESSID^/FIRST?INDEXLIST&amp;amp;FORM=[PEC]indexlist.html&KEYNAME=TITLE&WINDOW=TITLE_CL&database=PUB_DESCRIPTION&id=1" onclick="targetbx=text_1" id="1">browse</a>
+<br />
+</div>
+<div class="radios">
+Any word<input id="any_all_1_any" name="any_all_1" type="radio" value="any" /> All words <input id="any_all_1_all" name="any_all_1" type="radio" value="all" /> Exact phrase<input id="any_all_1_exact_phrase" name="any_all_1" type="radio" value="exact_phrase" />
+
+</div>  
+
+
+  
+<div class="adv_search_row first_False">
+
+
+   
+<select name="andor_2">
+<option value="and">And</option>
+<option value="or">or</option>
+<option value="and not">not</option>
+
+</select>
+   
+
+
+<select name="field_2" id='field_2'class="mnemonic">
+<option value="title_cl">Title</option>
+<option value="scope_cl">Scope</option>
+<option value="names_cl">Names</option>
+<option value="formats_cl">Formats</option>
+<option value="places_cl">Places</option>
+<option value="refno_cl">Reference Number</option>
+<option value="boxno_cl">Box Number</option>
+</select>
+
+ <input class="adv_textinput" id="text_2" name="text_2" type="text" />
+<a class="facebox browse browselink" href="^HOME_SESSID^/FIRST?INDEXLIST&amp;amp;FORM=[pec]indexlist.html&KEYNAME=TITLE&WINDOW=TITLE_CL&database=PUB_DESCRIPTION&id=2" onclick="targetbx=text_2" id="2">browse</a>
+<br />
+</div>
+<div class="radios">
+Any word<input id="any_all_2_any" name="any_all_2" type="radio" value="any" /> All words <input id="any_all_2_all" name="any_all_2" type="radio" value="all" /> Exact phrase<input id="any_all_2_exact_phrase" name="any_all_2" type="radio" value="exact_phrase" />
+
+</div>  
+
+
+  
+<div class="adv_search_row first_False">
+
+
+   
+<select name="andor_3">
+<option value="and">And</option>
+<option value="or">or</option>
+<option value="and not">not</option>
+
+</select>
+   
+
+
+<select name="field_3" id='field_3'class="mnemonic">
+<option value="title_cl">Title</option>
+<option value="scope_cl">Scope</option>
+<option value="names_cl">Names</option>
+<option value="formats_cl">Formats</option>
+<option value="places_cl">Places</option>
+<option value="refno_cl">Reference Number</option>
+<option value="boxno_cl">Box Number</option>
+</select>
+
+ <input class="adv_textinput" id="text_3" name="text_3" type="text" />
+<a class="facebox browse browselink" href="^HOME_SESSID^/FIRST?INDEXLIST&amp;amp;FORM=[pec]indexlist.html&KEYNAME=TITLE&WINDOW=TITLE_CL&database=PUB_DESCRIPTION&id=3" onclick="targetbx=text_3" id="3">browse</a>
+<br />
+</div>
+<div class="radios">
+Any word<input id="any_all_3_any" name="any_all_3" type="radio" value="any" /> All words <input id="any_all_3_all" name="any_all_3" type="radio" value="all" /> Exact phrase<input id="any_all_3_exact_phrase" name="any_all_3" type="radio" value="exact_phrase" />
+
+</div>  
+
+
+  
+<div class="adv_search_row first_False">
+
+
+   
+<select name="andor_4">
+<option value="and">And</option>
+<option value="or">or</option>
+<option value="and not">not</option>
+
+</select>
+   
+
+
+<select name="field_4" id='field_4'class="mnemonic">
+<option value="title_cl">Title</option>
+<option value="scope_cl">Scope</option>
+<option value="names_cl">Names</option>
+<option value="formats_cl">Formats</option>
+<option value="places_cl">Places</option>
+<option value="refno_cl">Reference Number</option>
+<option value="boxno_cl">Box Number</option>
+</select>
+
+ <input class="adv_textinput" id="text_4" name="text_4" type="text" />
+<a class="facebox browse browselink" href="^HOME_SESSID^/FIRST?INDEXLIST&amp;amp;FORM=[pec]indexlist.html&KEYNAME=TITLE&WINDOW=TITLE_CL&database=PUB_DESCRIPTION&id=4" onclick="targetbx=text_4" id="4">browse</a>
+<br />
+</div>
+<div class="radios">
+Any word<input id="any_all_4_any" name="any_all_4" type="radio" value="any" /> All words <input id="any_all_4_all" name="any_all_4" type="radio" value="all" /> Exact phrase<input id="any_all_4_exact_phrase" name="any_all_4" type="radio" value="exact_phrase" />
+
+</div>  
+
+
+  
+<div class="adv_search_row first_False">
+
+
+   
+<select name="andor_5">
+<option value="and">And</option>
+<option value="or">or</option>
+<option value="and not">not</option>
+
+</select>
+   
+
+
+<select name="field_5" id='field_5'class="mnemonic">
+<option value="title_cl">Title</option>
+<option value="scope_cl">Scope</option>
+<option value="names_cl">Names</option>
+<option value="formats_cl">Formats</option>
+<option value="places_cl">Places</option>
+<option value="refno_cl">Reference Number</option>
+<option value="boxno_cl">Box Number</option>
+</select>
+
+ <input class="adv_textinput" id="text_5" name="text_5" type="text" />
+<a class="facebox browse browselink" href="^HOME_SESSID^/FIRST?INDEXLIST&amp;amp;FORM=[pec]indexlist.html&KEYNAME=TITLE&WINDOW=TITLE_CL&database=PUB_DESCRIPTION&id=5" onclick="targetbx=text_5" id="5">browse</a>
+<br />
+</div>
+<div class="radios">
+Any word<input id="any_all_5_any" name="any_all_5" type="radio" value="any" /> All words <input id="any_all_5_all" name="any_all_5" type="radio" value="all" /> Exact phrase<input id="any_all_5_exact_phrase" name="any_all_5" type="radio" value="exact_phrase" />
+
+</div>  
+
+
+  <input id="advsearch" name="advsearch" type="hidden" />
+  
+  <input id="submit" name="Submit" type="submit" value="Submit" />
+  </form>
+</div>
+ 
+ 
+  
+  
+
+
+          </div>
+          <div class="clearer"></div>
+           </div>
+           </div>
+            <div id="footer" class="noprint">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div id="footerlinks"><a href="helps24.php">FAQ's</a> | <a href="termsprivacys25.php">Privacy Policy</a> | <a href="sitemaps20.php">Site Map</a> | <a href="https://www.pecarchives.org/request-an-appointment/">Contact Us</a></div>
+    <br />
+
+      Copyright © 2009 County of Prince Edward Public Library &amp; Archives. All rights reserved. | All pictures without watermarks are available by contacting the archives. </td>
+    <td align="right" valign="bottom"><a href="http://www.siteapex.com/" target="_blank">Online Archival Management by MINISIS &copy;</a></td>
+  </tr>
+</table>
+ </div>
+
+          </div>
+                
+          
+          
+          
+          
+          

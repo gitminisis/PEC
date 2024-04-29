@@ -1,0 +1,18 @@
+<%inherit file="site.mako"/>
+<%namespace file="functions.mako" import="*"/>
+
+<%doc>
+The 404 error page
+</%doc>
+
+<%def name="body()">
+
+Please try again
+${c.message}
+
+</%def>
+
+<%def name="title()">
+Requested page not found
+</%def>
+

@@ -1,0 +1,47 @@
+ <script>
+WriteCookie("current_page", url);
+</script>
+
+<script>
+function get_cookies_array() {
+
+    var cookies = { };
+	
+
+    if (document.cookie && document.cookie != '') {
+        var split = document.cookie.split(';');
+        for (var i = 0; i < split.length; i++) {
+            var name_value = split[i].split("=");
+            name_value[0] = name_value[0].replace(/^ /, '');
+            cookies[decodeURIComponent(name_value[0])] = decodeURIComponent(name_value[1]);
+        }
+    }
+
+    return cookies;
+	
+   
+}
+
+window.onload = function()
+{
+var cookies = get_cookies_array();
+var ximages= 0;
+for(var name in cookies) {
+   var slicedcookie = name.substring(0, 5);
+   if (slicedcookie == "image"){
+   ximages ++;
+   }
+}
+
+document.getElementById('gallery_count').innerHTML = ximages;
+}
+
+</script> 
+ 
+ <div class="header_links">               
+            <a href="/pec/index.html">Home</a> |                 
+            <a href="^home_sessid^?get&file=[pec]advsearch.html">Advanced Search</a> |                 
+            <a class="clipboard_link" href="^HOME_SESSID^?SHOWORDERLIST&NEW=N&NOMSG=[PEC]MESSAGES~5Ccartempty.htm&COOKIE=BOOKMARK">  View Clipboard                     
+              <span class="clipboard_count">(^ITEMCOUNT=BOOKMARK^)</span></a> |                      
+            <a href="/PEC/gallery.html" class="gallery_link"> Image Gallery (<span class="gallery_count" id="gallery_count"></span>)</a>                 
+          </div>       

@@ -1,0 +1,226 @@
+/**
+ *The MINISIS OPAC Interface Javascript Library 
+ * Version: 1.0
+ * Date: July 27/2010
+ * Author: Geoff Affleck 
+ * 
+ * This library handles the common AJAX and JS calls of the standard MINISIS OPAC.
+ *       
+ * 
+ */
+
+ //Initialize the following objects if they appear on the page. 
+$(document).ready(function(){
+    $('.gallery').facebox();
+    $('.clipboard_wrap').hover(function(){
+      $(this).children().css('visibility','visible');
+    });
+    
+    $('.selAll').click(function(){
+       $('.summary_table input').each(function(){
+          $(this).attr('checked','on')
+       });
+    });
+    
+      $('.unSelAll').click(function(){
+       $('.summary_table input').each(function(){
+          $(this).removeAttr('checked')
+       });
+    });
+   
+   $('.detail_remove_clipboard').click(function(){
+       var aj_url = $(this).attr('id');
+       
+       $.ajax({  
+        type: "POST",  
+        url: aj_url,
+        success: function(data) {  
+        
+        $('.clipboard_count').html(data)  
+        .hide()  
+        .fadeIn(1500);
+        
+        //alert('Items Successfully removed from Clipboard');  
+        },error:function(textStatus,errorThrown)
+        {
+        alert('Could not remove Item from Clipboard');
+        } 
+        });
+    });
+   
+    
+    $('.remove_clipboard').click(function(){
+       var id = $(this).attr('id');
+       var db = $(this).parents().attr('id');
+       var link = $(this);
+       $.ajax({  
+        type: "POST",  
+        url: "/page/removeItemFromClipboard/"+db+'/'+id,
+        success: function(data) {  
+        
+        $('.clipboard_count').html(data)  
+        .hide()  
+        .fadeIn(1500);
+        var parent = $(this).parents("tr");
+        
+        link.parents("tr").remove();
+        //alert('Items Successfully removed from Clipboard');  
+        },error:function(textStatus,errorThrown)
+        {
+        alert('Could not remove Item from Clipboard');
+        } 
+        });
+    });
+    
+    $('#save_clipboard').click(function(){
+    //first get all the selected id's in a string
+    var db = $(this).attr('class')
+    var selected = ''
+    $('.summary_table input').each(function(){
+        if ($(this).attr('checked'))
+        {
+        selected += $(this).attr('name')+'='+$(this).attr('id')+'&';
+        }
+    });
+     
+    //now do an ajax call to our save action sending the string as data
+   $.ajax({  
+   type: "POST",  
+   url: "/page/addItemsToClipboard/"+db ,
+   data: selected,  
+   success: function(data) {  
+     $('.clipboard_link').animate({border: '6px solid yellow'},1000,function(){
+     $('.clipboard_count').html(data)  
+     .hide()  
+     .fadeIn(1500, function(){
+      $('.clipboard_link').animate({border: '0'},2000);
+      });
+     });  
+   },error:function(textStatus,errorThrown)
+   {
+   alert(errorThrown);
+   }  
+ });  
+});
+
+  $('#save_item_clipboard').click(function(){
+      //get the url of this item which should contain the ID
+      var surl = $(this).attr('href');
+         $.ajax({  
+          type: "POST",  
+        url: surl,
+     
+      success: function(data) {  
+      $('.clipboard_link').animate({border: '6px solid yellow'},1000,function(){
+      $('.clipboard_count').html(data)  
+     .hide()  
+     .fadeIn(1500, function(){
+      $('.clipboard_link').animate({border: '0'},2000);
+      });
+     });  
+   },error:function(textStatus,errorThrown)
+   {
+   alert(errorThrown);
+   }  
+ });
+ return false;  
+      
+  });
+
+  $('.delete_clipboard').click(function(){
+    $.ajax({  
+   type: "POST",  
+   url: "/clipboard/delete" ,
+   success: function(data) {  
+     $('.clipboard_count').html(data)  
+     .hide()  
+     .fadeIn(1500);
+     alert('Clipboard Successfully deleted') ; 
+   },error:function(textStatus,errorThrown)
+   {
+   alert(errorThrown);
+   }  
+ });
+ return false;  
+  });
+  
+  $('.add_gallery').click(function(){
+  //on click get the image, caption and ref code 
+      var href = $('.image_group a:first-child').attr('href');
+      var title = $('.image_group a:first-child').attr('title');
+      var refd = $('.REFD_val').html();
+      var img = {'title':title,'href':href,'refd':refd}
+      
+   $.ajax({  
+   type: "POST",  
+   url: "/page/addImagesToGallery" ,
+   data: img,  
+   success: function(data) {  
+     $('.gallery_count').html(data)  
+     .hide()  
+     .fadeIn(1500); 
+     alert("Items successfully added to Image Gallery"); 
+      
+   },error:function(textStatus,errorThrown)
+   {
+   alert(errorThrown);
+   }  
+ });    
+  });
+  
+  $('.submit_images').click(function(){
+    //first get all the selected id's in a string
+    
+    var selected = ''
+    $('.image_group input').each(function(){
+        if ($(this).attr('checked'))
+        {
+        selected += $(this).attr('name')+'=on'+'&';
+        }
+    });
+    //now do an ajax call to our save action sending the string as data
+   $.ajax({  
+   type: "POST",  
+   url: "/page/addImagesToGallery" ,
+   data: selected,  
+   success: function(data) {  
+     $('.gallery_link').animate({border: '6px solid yellow'},1000,function(){
+     $('.gallery_count').html(data)  
+     .hide()  
+     .fadeIn(1500, function(){
+      $('.gallery_link').animate({border: '0'},2000);
+      });
+     });  
+   },error:function(textStatus,errorThrown)
+   {
+   alert(errorThrown);
+   }  
+ });  
+});
+  
+  
+$('#nav li').hover(function(){
+  $(this).children('li').animate({
+    visibility: visible
+  },1000);
+});  
+       
+      
+       
+
+});
+
+
+$(document).ready(function() {
+        $("ul.blockeasing li.main").mouseover(function(){ //When mouse over ...
+        	   //Following event is applied to the subnav itself (making height of subnav 60px)
+		      $(this).find('.subnav').stop().animate({height: '60px', opacity:'1'},{queue:false, duration:1500, easing: 'easeOutBounce'})
+		});                                  
+
+	    $("ul.blockeasing li.main").mouseout(function(){ //When mouse out ...
+	          //Following event is applied to the subnav itself (making height of subnav 0px)
+		      $(this).find('.subnav').stop().animate({height:'0px', opacity:'0'},{queue:false, duration:1600, easing: 'easeOutBounce'})
+		});
+    
+});
+

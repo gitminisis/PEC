@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>^TITLE^ Access List</title>	
+
+<style>
+body {
+	font-family: 'Ubuntu',sans-serif;
+}
+</style>
+      <script>
+	
+	$('.browse_window').live('dblclick',function(){
+       var id = $(this).attr('id');
+	   var selVal = $(this).val();
+	   $('#text_'+id).val(selVal);
+       var whatever = '';
+	   var whatever = parent.targetbx;
+	   whatever.value = selVal;
+	   $('.close').click();
+    });
+    </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+ </head>
+
+ <body class="indexList" style="background: none repeat scroll 0 0 #EEEEEE">
+ <!-- IndexList-->  
+  <div align="center">
+   <div class="browse_nav">
+    <a class="facebox" href="^PREV^">Prev 500</a>  
+    <a class="facebox" href="^NEXT^">Next 500</a>
+    
+   </div>
+      
+ 
+  </div>
+   
+   <div align="center">   
+     <form  name="keys">
+	   
+       <select class="browse_window" name="keyvalue" size=20 >
+        ^INDEX_LIST^
+       </select>
+   </div>
+  </form>
+ 
+
+
+
+  </body>
+  
+</html>
+
